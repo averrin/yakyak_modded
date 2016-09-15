@@ -86,6 +86,12 @@ module.exports = view (models) ->
             , onkeydown: (e) ->
                 if (e.metaKey or e.ctrlKey) and e.keyIdentifier == 'Up' then action 'selectNextConv', -1
                 if (e.metaKey or e.ctrlKey) and e.keyIdentifier == 'Down' then action 'selectNextConv', +1
+                if (e.metaKey or e.ctrlKey) and e.keyCode == 74
+                    e.preventDefault()
+                    action 'sendmessage', e.target.value
+                    historyPush e.target.value
+                    e.target.value = ''
+                    autosize.update e.target
                 unless isModifierKey(e)
                     if e.keyCode == 27
                         e.preventDefault()

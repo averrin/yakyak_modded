@@ -338,6 +338,7 @@ templateOthers = (viewstate) -> [{
                     click: -> action 'changefontsize', 'x-large'
                 }
             ]
+
         }, {
             label: 'Toggle Full Screen',
             accelerator: 'Control+Alt+F',
@@ -359,12 +360,12 @@ templateOthers = (viewstate) -> [{
           type: 'separator'
         }, {
             label: 'Previous Conversation',
-            accelerator: 'Control+K',
+            accelerator: 'Control+P',
             click: -> action 'selectNextConv', -1
             enabled: viewstate.loggedin
         }, {
             label: 'Next Conversation',
-            accelerator: 'Control+J',
+            accelerator: 'Control+N',
             click: -> action 'selectNextConv', +1
             enabled: viewstate.loggedin
         }, {
